@@ -6,7 +6,9 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
 
-   [SerializeField] private AudioSource _adgangSource, _begrænsetSource, _ingenSource;
+//    [SerializeField] private AudioSource _adgangSource, _begrænsetSource, _ingenSource;
+
+   [SerializeField] private AudioSource _soundSource;
 
     
    void Awake() 
@@ -21,24 +23,30 @@ public class SoundManager : MonoBehaviour
            Destroy(gameObject);
        }
     }
-    public void PlayAdgangSound()
+    
+    
+    public void PlaySound(AudioClip clip)
     {
-        _adgangSource.Play();
+        _soundSource.PlayOneShot(clip);
     }
-     public void PlayBegrænsetSound()
-    {
-        _begrænsetSource.Play();
-    }
-     public void PlayIngenSound()
-    {
-        _ingenSource.Play();
-    }
+    // public void PlayAdgangSound()
+    // {
+    //     _adgangSource.Play();
+    // }
+    //  public void PlayBegrænsetSound()
+    // {
+    //     _begrænsetSource.Play();
+    // }
+    //  public void PlayIngenSound()
+    // {
+    //     _ingenSource.Play();
+    // }
  //CAN BE USED LATER
 
-    // public void ChangeMasterVolume(float value)
-    // {
-    //     AudioListener.volume = value;
-    // }
+    public void ChangeMasterVolume(float value)
+    {
+        AudioListener.volume = value;
+    }
 
     // public void ToggleAdgang()
     // {

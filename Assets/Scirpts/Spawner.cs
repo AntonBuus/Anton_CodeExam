@@ -75,21 +75,21 @@ public class Spawner : MonoBehaviour
     {
         objectsToSpawn[popupCounter].SetActive(true);
 
-        if(popupCounter == 0)
-        {
-         SoundManager.Instance.PlayAdgangSound();
+        // if(popupCounter == 0)
+        // {
+        //  SoundManager.Instance.PlayAdgangSound();
 
-        }
-        else if(popupCounter == 1)
-        {
-         SoundManager.Instance.PlayIngenSound();
+        // }
+        // else if(popupCounter == 1)
+        // {
+        //  SoundManager.Instance.PlayIngenSound();
 
-        }
-        else if(popupCounter == 2)
-        {
-         SoundManager.Instance.PlayBegrænsetSound();
+        // }
+        // else if(popupCounter == 2)
+        // {
+        //  SoundManager.Instance.PlayBegrænsetSound();
 
-        }
+        // }
         //Instantiate(objectsToSpawn, transform.position, Quaternion.identity);
     }
 }
