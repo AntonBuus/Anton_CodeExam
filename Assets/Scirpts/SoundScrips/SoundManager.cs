@@ -48,6 +48,11 @@ public class SoundManager : MonoBehaviour
         AudioListener.volume = value;
     }
 
+    
+    public void ToggleSounds()
+    {
+        _soundSource.mute = !_soundSource.mute;  
+    }
     // public void ToggleAdgang()
     // {
     //     _adgangSource.mute = !_adgangSource.mute;
