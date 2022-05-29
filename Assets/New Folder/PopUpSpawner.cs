@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class PopUpSpawner : MonoBehaviour
 {
-    // Rigidbody rb;
+    Rigidbody2D rb;
 
     public GameObject ObjectToSpawn;
 
     public Transform spawnPoint;
 
     
-    // void Start()
-    // {
-    //     rb = GetComponent<Rigidbody>();
-    // }
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     public void SpawnObjectImproved()
     {
