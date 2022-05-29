@@ -51,6 +51,8 @@ public class SoundManager : MonoBehaviour
         _soundSource.mute = _mute;  //this is the line that actually mutes the sounds
         _isMuted = _mute; //this variable is keept up to date across all scenes because of this line and the singleton
     }
+}
+
 
     ///
 ///    OLD CODE BELOW, USED TO REQUIRE MULTIPLE METHODS FOR EACH INDIVIDUAL CLIP
@@ -85,4 +87,3 @@ public class SoundManager : MonoBehaviour
     // {
     //     _ingenSource.mute = !_ingenSource.mute;
     // }
-}
