@@ -8,6 +8,7 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance; //Creates instance of the this class
 
    [SerializeField] private AudioSource _soundSource; //This is where the gameoject with an audiosource has to be placed in order for sound to be played
+   public bool _isMuted; // This is to acces the mute property without giving other scripts access to the audiosource
     
   /// <summary>
   /// This method is in short the Singleton that persists through scenechanges so that the soundmanager works at all times.
@@ -38,11 +39,17 @@ public class SoundManager : MonoBehaviour
     {
         AudioListener.volume = value;
     }
+    // This method returns the value of the audiolisteners volume as a float to be used in VolumeSlider
+    public float GetVolume()
+    {
+        return AudioListener.volume;
+    }
 
     // This method toggles sounds on and off when called in the Script ToggleAudio.
-    public void ToggleSounds()
+    public void ToggleSounds(bool _mute)
     {
-        _soundSource.mute = !_soundSource.mute;  
+        _soundSource.mute = _mute;  //this is the line that actually mutes the sounds
+        _isMuted = _mute; //this variable is keept up to date across all scenes because of this line and the singleton
     }
 
     ///
